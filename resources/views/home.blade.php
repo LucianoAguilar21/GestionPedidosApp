@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
+@section('home')
+<div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -15,6 +15,14 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    
+                    Tus empresas:
+                    <br>
+                    @foreach(auth()->user()->companies()->get() as $company)
+                        {{$company->name}}
+                        <br>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
