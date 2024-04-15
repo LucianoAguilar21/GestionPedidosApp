@@ -18,6 +18,8 @@
                     
                     Tus empresas:
                     <br>
+
+
                     @foreach(auth()->user()->companies()->get() as $company)
                         {{$company->name}}
                         <br>

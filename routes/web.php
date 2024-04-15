@@ -22,8 +22,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('companies');
+
+Route::get('/add-order', [App\Http\Controllers\OrderController::class, 'create'])->name('add-order');
+Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('orders');
 Route::get('/register-company',[App\Http\Controllers\CompanyController::class, 'create'])->name('register-company');
 
 Route::post('/registerCompany',[App\Http\Controllers\CompanyController::class, 'store']);
 
-Route::post('/company/{id}');
